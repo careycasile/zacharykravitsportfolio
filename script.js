@@ -6,9 +6,6 @@ window.onload = event => {
   function addPageTitle() {
     return (document.title = "Zachary Allen Kravits");
   }
-  function playAnimation() {
-    return line1;
-  }
   addPageTitle();
 };
 
@@ -52,8 +49,9 @@ window.addEventListener("resize", function() {
 //
 //
 //
-// MODAL
+// WORK PAGE
 
+const card = document.getElementById("card");
 const modalBackground = document.getElementById("bg-modal");
 const modal = document.getElementById("modal");
 const closeButton = document.getElementById("close-button");
@@ -70,20 +68,65 @@ closeButton.addEventListener("click", function() {
   blur.removeAttribute("class", "blur");
 });
 
-//
-//
-//
-// ANIMATIONS
-// import anime from "animejs/lib/anime.es.js";
+// Scroll progress
+const content = document.getElementById("material");
+const contentScroll = document.getElementById("material").style.height;
 
-// const anime = require("anime");
+content.addEventListener(
+  "scroll",
+  function() {
+    var scrollTop = documentElement["scrollTop"] || document.body["scrollTop"];
+    var scrollBottom =
+      (document.documentElement["scrollHeight"] ||
+        document.body["scrollHeight"]) - document.documentElement.clientHeight;
+    scrollPercentage = (scrollTop / scrollBottom) * 100 + "%";
+    document
+      .getElementById("progressBar")
+      .style.setProperty("--scroll", scrollPercentage);
+    // const scrolled = window.scrollY;
+    // !== undefined
+    //   ? window.pageYOffset
+    //   : (document.documentElement || document.content.parentNode || document.contentScroll)
+    //       .scrollTop;
+    //
 
-// // // Peace SVG
-// const line1 = anime({
-//   targets: ".cls-1",
-//   strokeDashoffset: [anime.setDashoffset, 0],
-//   easing: "easeInOutSine",
-//   duration: 1500,
-//   direction: "alternate",
-//   loop: true
+    // document.getElementById("progressBar").style.width = winScroll + "%";
+  },
+  { passive: true }
+);
+
+// // Create links for a modal
+function createLinks() {
+  let sections = document.querySelectorAll("#projectSection");
+  let links = [];
+
+  for (var x = 0; x < sections.length; x++) {
+    links.push(sections[x].innerHTML);
+  }
+  for (var link = 0; link < links.length; link++) {
+    const newLink = document.createElement("LI");
+    newLink.innerHTML = links[link];
+    document.getElementById("scroll-links").appendChild(newLink);
+    newLink.setAttribute("id", links[link]);
+    newLink.setAttribute("class", "link");
+  }
+}
+createLinks();
+
+// document.addEventListener("click", function(e) {
+//   if (e.target.className == "link") {
+//     scrollTop(0);
+//     // alert("hey");
+//   }
+// });
+
+// // Scroll to something in the modal
+// function scrollToAnchor(aid) {
+//   var aTag = $("a[name='" + aid + "']");
+//   $("#material").animate({ scrollTop: aTag.offset().top }, "slow");
+// }
+
+// $(".link").click(function(e) {
+//   console.log(e.target.id);
+//   $("#material").animate({ scrollTop: e.target.id }, "slow");
 // });

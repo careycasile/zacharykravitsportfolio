@@ -27,6 +27,9 @@ a:visited {
     visibility: hidden;
     display: none;
   }
+  #scroll-links {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 545px) {
@@ -37,8 +40,17 @@ a:visited {
   .mobilemenu {
     visibility: visible;
   }
+  #header-details {
+    display: none;
+  }
   #scroll-links {
     display: none;
+  }
+  #modal-body {
+    max-height: 580px;
+  }
+  h3 {
+    padding-bottom: 12px;
   }
 }
 
@@ -215,12 +227,18 @@ p {
   max-width: 960px;
   height: calc(100% - 80px);
   background: rgba(255, 255, 255, 0.7);
-  overflow-y: auto;
+  /* Enter */
+  -webkit-animation: cardModalTransition 500ms;
+  -moz-animation: cardModalTransition 500ms;
+  -o-animation: cardModalTransition 500ms;
+  animation: cardModalTransition 500ms;
 }
 
-/* #modal-wrapper {
-  margin: 32px;
-} */
+#material {
+  padding-right: 16px;
+  overflow-y: scroll;
+  height: calc(100vh - 260px);
+}
 
 #modal-header {
   top: 40px;
@@ -233,33 +251,60 @@ p {
 
 #modal-header h3 {
   margin-bottom: 0;
+  font-weight: 400;
+}
+#header-info {
+  padding-bottom: 12px;
 }
 
 #modal-header p {
   margin-top: 4px;
-  margin-bottom: 8px;
+  font-size: 14px;
+  margin-bottom: 4px;
   padding-top: 0;
   padding-bottom: 0;
 }
 
 #modal-body {
   margin-top: 40px;
+  min-height: 200px;
+  max-height: 520px;
   margin: 32px;
   display: flex;
   display: -webkit-flex;
   justify-content: space-between;
 }
 
+#progressBar {
+  background: #70acac;
+  transition: 600ms;
+  height: 2px;
+}
+
 #scroll-links {
   justify-content: flex-start;
   min-width: 80px;
-  padding-right: 24px;
+  padding-right: 52px;
   text-align: left;
+}
+
+li {
+  font-weight: 200;
+  color: #3a3a3a;
+  font-weight: 400;
+  margin-bottom: 1.2em;
+  list-style-type: none;
+}
+
+#scroll-links li:hover {
+  transition: 200ms;
+  text-decoration: underline;
+  text-decoration-color: #70acac;
 }
 
 #close-button {
   cursor: pointer;
-  margin-top: 32px;
+  margin-top: 24px;
   padding: 16px;
 }
 
@@ -309,25 +354,30 @@ p {
 
 @-webkit-keyframes cardModalTransition {
   0% {
-    -webkit-transform: translateY(-1000px);
-    transform: translateY(-1000px);
+    transform: scale(0.5);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
+
 @keyframes cardModalTransition {
   0% {
-    -webkit-transform: translateY(-1000px);
-    transform: translateY(-1000px);
+    transform: scale(0.5);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
