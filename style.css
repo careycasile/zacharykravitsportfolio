@@ -182,15 +182,25 @@ p {
 
 /* Cards */
 
+#card-container {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 960px;
+}
+
 #card {
   background: #ffffff;
-  border-radius: 0.5rem;
-  -webkit-box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.2);
-  -moz-box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.2);
-  box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.2);
+  border-radius: 0.3rem;
+  -webkit-box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.5);
+  -moz-box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.5);
+  box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.5);
   cursor: pointer;
-  padding: 16px 64px;
-  max-width: 640px;
+  margin: 0 32px 32px 32px;
+  padding: 0;
+  border: 1px solid #eeeeee;
+  width: 240px;
   display: block;
   margin: auto;
   margin-bottom: 40px;
@@ -198,17 +208,17 @@ p {
 
 #card:hover {
   background: #ffffff;
-  -webkit-box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.4);
-  -moz-box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.4);
-  box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.4);
+  -webkit-box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.6);
+  -moz-box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.6);
+  box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.6);
   transition: 300ms;
 }
 
 #card:active {
   background: #ffffff;
-  -webkit-box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.4);
-  -moz-box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.3);
-  box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.3);
+  -webkit-box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.7);
+  -moz-box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.7);
+  box-shadow: -5px -8px 20px 0px rgba(222, 222, 222, 0.7);
   transition: 300ms;
 }
 
@@ -218,7 +228,18 @@ p {
 }
 
 #card p {
+  color: #ffffff;
+  margin-top: 4px;
   font-size: 1rem;
+  margin-bottom: 4px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#card-top {
+  background: #008082;
+  padding: 16px 32px;
+  border-radius: 0.3rem 0.3rem 0 0;
 }
 
 /* Modal */
@@ -237,7 +258,7 @@ p {
 }
 
 .blur {
-  filter: blur(12px);
+  filter: blur(16px);
   height: 100%;
 }
 
@@ -246,12 +267,13 @@ p {
   height: calc(100% - 80px);
   background: rgba(255, 255, 255, 0.7);
   position: absolute;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   -webkit-box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.5);
   -moz-box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.5);
   box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.5);
   top: 20px;
   z-index: 2;
+  border: 1px solid #eeeeee;
   /* Enter */
   -webkit-animation: cardModalTransition 500ms;
   -moz-animation: cardModalTransition 500ms;
@@ -268,7 +290,7 @@ p {
 #modal-header {
   top: 40px;
   padding: 0px 32px;
-  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  border-radius: 0.3rem 0.3rem 0rem 0rem;
   background: #008082;
   display: flex;
   display: -webkit-flex;
@@ -287,7 +309,7 @@ p {
 #modal-header p {
   color: #ffffff;
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 1rem;
   margin-bottom: 4px;
   padding-top: 0;
   padding-bottom: 0;
@@ -326,7 +348,7 @@ li {
 
 #close-button {
   cursor: pointer;
-  margin-top: 24px;
+  margin-top: 4px;
   padding: 16px;
   background: #008082;
   border: none;
@@ -353,8 +375,8 @@ li {
 
 @-webkit-keyframes textFocusIn {
   0% {
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
+    -webkit-filter: blur(16px);
+    filter: blur(16px);
     opacity: 0;
   }
   100% {
@@ -365,8 +387,8 @@ li {
 }
 @keyframes textFocusIn {
   0% {
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
+    -webkit-filter: blur(16px);
+    filter: blur(16px);
     opacity: 0;
   }
   100% {
@@ -379,8 +401,8 @@ li {
 @-webkit-keyframes cardModalTransition {
   0% {
     transform: scale(0.5);
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
+    -webkit-filter: blur(16px);
+    filter: blur(16px);
     opacity: 0;
   }
   100% {
@@ -394,8 +416,8 @@ li {
 @keyframes cardModalTransition {
   0% {
     transform: scale(0.5);
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
+    -webkit-filter: blur(16px);
+    filter: blur(16px);
     opacity: 0;
   }
   100% {
