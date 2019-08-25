@@ -1,92 +1,123 @@
-body {
-  background: rgb(255, 255, 255);
-  margin: 0;
-}
+// Colors & Typography
+$color-primary: #70acac
+$color-text: #3a3a3a
+$color-header: #000000
+$weight-light: 200
+$weight-normal: 300
+$size-large: 2rem
+$size-medium: 1.6rem
+$size-text: 1rem
 
-a {
-  color: #3a3a3a;
-  text-decoration: none;
-}
+// Spacing
+$space-8: 8px
+$space-16: 16px
+$space-32: 32px
+$space-52: 52px
 
-a:visited {
-  color: #3a3a3a;
-}
 
-#body-wrapper {
-  max-width: 720px;
-  margin: auto;
-  padding: 0px 32px 72px 32px;
-}
+@mixin header1
+    text-align: center
+    color: $color-header
+    font-weight: $weight-light
+    font-size: $size-large
 
-@media only screen and (min-width: 546px) {
-  .nav {
-    visibility: visible;
-  }
-  .mobilemenu {
-    visibility: hidden;
-    display: none;
-  }
-  #scroll-links {
-    display: block;
-  }
-}
+@mixin header2or3 
+    font-weight: $weight-light
+    margin-top: $space-32
+    margin-bottom: $space-8
+    font-weight: $weight-normal
+    display: inline-block
+    
+@mixin bodytext
+    font-weight: $weight-normal
+    color: $color-text
+    
+@mixin link
+    color: $color-text
+    text-decoration: none
 
-@media only screen and (max-width: 545px) {
-  .navitems {
-    visibility: hidden;
-    display: none;
-  }
-  .mobilemenu {
-    visibility: visible;
-  }
-  #header-details {
-    display: none;
-  }
-  #scroll-links {
-    display: none;
-  }
-  #modal-body {
-    max-height: 580px;
-  }
-  h3 {
-    padding-bottom: 12px;
-  }
-}
+    &:visited
+        color: $color-text
+    
+h1 
+    @include header1 
+
+h2, h3 
+    @include header2or3 
+
+body
+  background: rgb(255, 255, 255)
+  margin-left: 0
+  margin-right: 0
+
+
+#body-wrapper
+  max-width: 720px
+  margin: auto
+  padding: 0px 32px 72px 32px
+
+@media only screen and (min-width: 546px)
+  .nav
+    visibility: visible
+
+  .mobilemenu
+    visibility: hidden
+    display: none
+
+  #scroll-links
+    display: block
+
+@media only screen and (max-width: 545px)
+  .navitems
+    visibility: hidden
+    display: none
+
+  .mobilemenu 
+    visibility: visible
+  
+  #header-details 
+    display: none
+  
+  #scroll-links 
+    display: none
+  
+  #modal-body 
+    max-height: 580px
+  
+  h3
+    padding-bottom: 12px
+
+
 
 /* Main Nav */
 
-.nav {
-  top: 0;
-  max-width: 960px;
-  margin: auto;
-}
+.nav
+  top: 0
+  max-width: 960px
+  margin: auto
 
-ul {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-around;
-  color: #3a3a3a;
-  font-weight: 400;
-  margin-bottom: 6em;
-  list-style-type: none;
-  padding-inline-start: 0px;
-  cursor: pointer;
-}
+ul
+  display: flex
+  display: -webkit-flex
+  justify-content: space-around
+  color: #3a3a3a
+  font-weight: 400
+  margin-bottom: 6em
+  list-style-type: none
+  padding-inline-start: 0px
 
-.nav ul li {
-  padding: 20px 0px 20px;
-}
+.nav ul li
+  padding: 20px 0px 20px
 
-.nav li:hover {
-  transition: 200ms;
-  text-decoration: underline;
-  text-decoration-color: #70acac;
-}
+.nav li:hover
+  transition: 200ms
+  text-decoration: underline
+  text-decoration-color: #70acac
 
 /* Mobile Nav */
 
-.mobilemenu {
-  top: 0;
+.mobilemenu
+  top: 0
   max-width: 960px;
   margin: auto;
   margin-bottom: 72px;
@@ -189,8 +220,8 @@ p {
   -moz-box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.2);
   box-shadow: -5px -8px 46px 0px rgba(222, 222, 222, 0.2);
   cursor: pointer;
-  padding: 16px 64px;
-  max-width: 640px;
+  padding: 16px;
+  min-width: 640px;
   display: block;
   margin: auto;
   margin-bottom: 40px;
@@ -213,7 +244,6 @@ p {
 }
 
 #card h3 {
-  margin-top: 16px;
   font-size: 1.6rem;
 }
 
@@ -227,13 +257,6 @@ p {
   height: 100%;
   display: none;
   justify-content: center;
-}
-
-#behind-modal {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .blur {
@@ -269,14 +292,13 @@ p {
   top: 40px;
   padding: 0px 32px;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
-  background: #008082;
+  background: rgba(255, 255, 255, 1);
   display: flex;
   display: -webkit-flex;
   justify-content: space-between;
 }
 
 #modal-header h3 {
-  color: #ffffff;
   margin-bottom: 0;
   font-weight: 400;
 }
@@ -285,7 +307,6 @@ p {
 }
 
 #modal-header p {
-  color: #ffffff;
   margin-top: 4px;
   font-size: 14px;
   margin-bottom: 4px;
@@ -301,6 +322,12 @@ p {
   display: flex;
   display: -webkit-flex;
   justify-content: space-between;
+}
+
+#progressBar {
+  background: #70acac;
+  transition: 600ms;
+  height: 2px;
 }
 
 #scroll-links {
@@ -328,7 +355,7 @@ li {
   cursor: pointer;
   margin-top: 24px;
   padding: 16px;
-  background: #008082;
+  background: #ffffff;
   border: none;
 }
 
@@ -337,7 +364,7 @@ li {
   width: 24px;
   margin-top: 2px;
   height: 1px;
-  background: #ffffff;
+  background: #3a3a3a;
   transform: rotate(45deg);
 }
 
@@ -345,7 +372,7 @@ li {
   position: relative;
   width: 24px;
   height: 1px;
-  background: #ffffff;
+  background: #3a3a3a;
   transform: rotate(135deg);
 }
 

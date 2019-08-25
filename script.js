@@ -52,48 +52,30 @@ window.addEventListener("resize", function() {
 // WORK PAGE
 
 const card = document.getElementById("card");
-const modalBackground = document.getElementById("bg-modal");
-const modal = document.getElementById("modal");
+const outsideModal = document.getElementById("behind-modal");
+const modal = document.getElementById("modal-container");
 const closeButton = document.getElementById("close-button");
 const blur = document.getElementById("blur");
 
 // // Clicking the card
 card.addEventListener("click", function() {
-  modalBackground.style.display = "flex";
+  modal.style.display = "flex";
+  modal.style.display = "-webkit-flex";
+  outsideModal.style.display = "block";
   blur.setAttribute("class", "blur");
 });
 
 closeButton.addEventListener("click", function() {
-  modalBackground.style.display = "none";
+  modal.style.display = "none";
+  outsideModal.style.display = "none";
   blur.removeAttribute("class", "blur");
 });
 
-// Scroll progress
-const content = document.getElementById("material");
-const contentScroll = document.getElementById("material").style.height;
-
-content.addEventListener(
-  "scroll",
-  function() {
-    var scrollTop = documentElement["scrollTop"] || document.body["scrollTop"];
-    var scrollBottom =
-      (document.documentElement["scrollHeight"] ||
-        document.body["scrollHeight"]) - document.documentElement.clientHeight;
-    scrollPercentage = (scrollTop / scrollBottom) * 100 + "%";
-    document
-      .getElementById("progressBar")
-      .style.setProperty("--scroll", scrollPercentage);
-    // const scrolled = window.scrollY;
-    // !== undefined
-    //   ? window.pageYOffset
-    //   : (document.documentElement || document.content.parentNode || document.contentScroll)
-    //       .scrollTop;
-    //
-
-    // document.getElementById("progressBar").style.width = winScroll + "%";
-  },
-  { passive: true }
-);
+outsideModal.addEventListener("click", function() {
+  modal.style.display = "none";
+  outsideModal.style.display = "none";
+  blur.removeAttribute("class", "blur");
+});
 
 // // Create links for a modal
 function createLinks() {
@@ -112,21 +94,3 @@ function createLinks() {
   }
 }
 createLinks();
-
-// document.addEventListener("click", function(e) {
-//   if (e.target.className == "link") {
-//     scrollTop(0);
-//     // alert("hey");
-//   }
-// });
-
-// // Scroll to something in the modal
-// function scrollToAnchor(aid) {
-//   var aTag = $("a[name='" + aid + "']");
-//   $("#material").animate({ scrollTop: aTag.offset().top }, "slow");
-// }
-
-// $(".link").click(function(e) {
-//   console.log(e.target.id);
-//   $("#material").animate({ scrollTop: e.target.id }, "slow");
-// });

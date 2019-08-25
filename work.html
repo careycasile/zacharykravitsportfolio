@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./font.css" />
+    <link rel="stylesheet" href="style.css" />
     <title></title>
   </head>
   <body>
@@ -41,19 +41,19 @@
         <h1>Work</h1>
 
         <!-- Card -->
-        <div id="card">
+        <button id="card">
           <div id="card-content">
             <h3>Title</h3>
             <p>Description</p>
             <p>Company</p>
             <div class="bg-img"></div>
           </div>
-        </div>
+        </button>
       </div>
     </div>
     <!-- Modal content -->
 
-    <div id="bg-modal">
+    <div id="modal-container">
       <div id="modal">
         <div id="modal-wrapper">
           <div id="modal-header">
@@ -64,10 +64,10 @@
                 <p>Idelic</p>
               </div>
             </div>
-            <div id="close-button">
+            <button id="close-button">
               <div id="line"></div>
               <div id="line2"></div>
-            </div>
+            </button>
           </div>
           <div id="progressBar"></div>
           <div id="modal-body">
@@ -191,7 +191,9 @@
           </div>
         </div>
       </div>
+      <div id="behind-modal"></div>
     </div>
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
