@@ -13,7 +13,6 @@ window.onload = event => {
 //
 //
 // NAVIGATION
-
 const menuToggle = document.getElementById("menu-toggle");
 const mobileOptions = document.getElementById("mobileoptions");
 
@@ -50,7 +49,6 @@ window.addEventListener("resize", function() {
 //
 //
 // WORK PAGE
-
 const card = document.getElementById("card");
 const outsideModal = document.getElementById("behind-modal");
 const modal = document.getElementById("modal-container");
@@ -78,19 +76,30 @@ outsideModal.addEventListener("click", function() {
 });
 
 // // Create links for a modal
-function createLinks() {
-  let sections = document.querySelectorAll("#projectSection");
-  let links = [];
+let headers = document.querySelectorAll(".projectSection");
+let links = [];
 
-  for (var x = 0; x < sections.length; x++) {
-    links.push(sections[x].innerHTML);
+function createLinks() {
+  for (var x = 0; x < headers.length; x++) {
+    links.push(headers[x].innerHTML);
   }
+
   for (var link = 0; link < links.length; link++) {
     const newLink = document.createElement("LI");
     newLink.innerHTML = links[link];
     document.getElementById("scroll-links").appendChild(newLink);
     newLink.setAttribute("id", links[link]);
     newLink.setAttribute("class", "link");
+    newLink.addEventListener("click", function() {
+      //scroll to action
+      let linkClicked = newLink.id;
+      console.log(linkClicked);
+      for (var y = 0; y < headers.length; y++) {
+        if (headers[y].innerHTML == linkClicked) {
+          headers[y].scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
   }
 }
 createLinks();
