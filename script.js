@@ -2,9 +2,18 @@
 //
 //
 // PAGE TAB TITLE
+const url = window.location.pathname;
+const file = url.replace(".html", "");
+const pageName = file.substring(file.lastIndexOf("/") + 1);
+const upperCase = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+
 window.onload = event => {
   function addPageTitle() {
-    return (document.title = "Zachary Allen Kravits");
+    if (pageName === "index") {
+      return (document.title = "Zachary Allen Kravits" + " - " + "Home");
+    } else {
+      return (document.title = "Zachary Allen Kravits" + " - " + upperCase);
+    }
   }
   addPageTitle();
 };

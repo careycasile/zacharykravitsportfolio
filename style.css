@@ -427,3 +427,16 @@ li {
     opacity: 1;
   }
 }
+
+@keyframes peaceHand {
+  0% {
+    stroke-dasharray: 6588;
+    stroke-dashoffset: 3294;
+    opacity: 0;
+  }
+  100% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
