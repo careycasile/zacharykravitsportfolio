@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="./font.css" />
     <link rel="stylesheet" href="style.css" />
     <title></title>
   </head>
   <body>
     <!----- Navigation ----->
-    <div id="blur">
+    <div id="page">
       <div class="nav">
         <ul class="navitems">
           <a href="./index.html"
@@ -39,42 +40,19 @@
       <!----- Body ----->
       <div class="textFocusIn" id="body-wrapper">
         <h1>Work</h1>
-
-        <!-- Card -->
-        <div id="card-container">
-          <button id="card">
-            <div id="card-content">
-              <div id="card-top">
-                <p>UX/UI | Idelic</p>
-              </div>
-              <div id="card-bottom">
-                <h3>Watch List</h3>
-              </div>
-              <div class="bg-img"></div>
-            </div>
-          </button>
-          <button id="card">
-            <div id="card-content">
-              <div id="card-top">
-                <p>UX/UI | Idelic</p>
-              </div>
-              <div id="card-bottom">
-                <h3>KPI Dashboard</h3>
-              </div>
-              <div class="bg-img"></div>
-            </div>
-          </button>
-        </div>
+        <div id="card-section"></div>
       </div>
     </div>
+
     <!-- Modal content -->
 
     <div id="modal-container">
-      <div id="modal">
+      <!----------------------------- No. 1 ----------------------------->
+      <div class="modal">
         <div id="modal-wrapper">
           <div id="modal-header">
             <div id="header-info">
-              <h3>Watch List</h3>
+              <h3 id="modal-title">Watch List</h3>
               <div id="header-details">
                 <p>UX/UI Design | Idelic</p>
               </div>
@@ -84,134 +62,352 @@
               <div id="line2"></div>
             </button>
           </div>
-          <div id="progressBar"></div>
           <div id="modal-body">
             <ul id="scroll-links"></ul>
             <div id="material">
               <div>
                 <h2 class="projectSection">Problem</h2>
+                <h3>Industry Background and User Problems</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  convallis libero dignissim, pretium lectus non, mattis lorem.
-                  Praesent laoreet mi ut ante varius tristique. Nullam et orci
-                  lorem. Vestibulum posuere dui non dolor tristique viverra.
-                  Quisque elementum libero a mauris maximus consequat ut eu
-                  dolor. Vestibulum id risus at eros ornare vehicula et at
-                  felis. Pellentesque leo lorem, fermentum in fermentum eu,
-                  vulputate tempor leo.
+                  The trucking industry has a handful of problems. One is it's
+                  astonishingly high driver turnover due to drivers jumping from
+                  fleet to fleet for very slight pay bumps and not feeling they
+                  are treated well. Two, many trucking fleets still use excel
+                  spreadsheets to track all of their data. This can easily get
+                  out of hand when a fleet has just a few hundred drivers
+                  because there are several silioed data systems, federal
+                  required documents, and recording of events like inspections,
+                  violations, collisions, etc. Lastly, events like collisions
+                  with other vehicles can easily get up to tens of thousands of
+                  dollars in fees and a mound of paper work for the fleet's
+                  safety team.
                 </p>
+                <p>
+                  Idelic's Watch List uses Machine Learning to analyze a truck
+                  driver's risk level on the road by looking at an array of
+                  factors including (but not limited to) previous collisions,
+                  road violations, hours of service violations, and telematics
+                  alerts (speeding, harsh braking, harsh cornering).
+                </p>
+                <h3>Design Challenges</h3>
+                <p>Some challenges included:</p>
+                <ol id="briefList">
+                  <li>
+                    Balance between user needs and blowing up development
+                    effort.
+                  </li>
+                  <li>
+                    Balance between volume of data and cognitive overload.
+                  </li>
+                </ol>
+              </div>
+              <div>
+                <h2 class="projectSection">Task</h2>
+                <p>
+                  The task was to create a new more robust, yet simple workflow
+                  that enabled a fleet's safety team to:
+                </p>
+                <ol id="briefList">
+                  <li>Identify the fleet's riskest drivers.</li>
+                  <li>Briefly analyze that driver's history.</li>
+                  <li>
+                    Assign a performance improvement plan. Performance
+                    improvement plans (previous UX project with Idelic) are
+                    prestrictive plans with multi-step, multi-touch engages
+                    between the driver and their manager to work the driver's
+                    their root issue.
+                  </li>
+                </ol>
               </div>
               <div>
                 <h2 class="projectSection">Research</h2>
+                <h3>Interviews</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  convallis libero dignissim, pretium lectus non, mattis lorem.
-                  Praesent laoreet mi ut ante varius tristique. Nullam et orci
-                  lorem. Vestibulum posuere dui non dolor tristique viverra.
-                  Quisque elementum libero a mauris maximus consequat ut eu
-                  dolor. Vestibulum id risus at eros ornare vehicula et at
-                  felis. Pellentesque leo lorem, fermentum in fermentum eu,
-                  vulputate tempor leo. Proin scelerisque enim eu felis
-                  ultricies malesuada sit amet fringilla odio. Nunc eget arcu
-                  sit amet eros convallis rutrum a nec nibh. Aliquam et massa ac
-                  lectus fringilla accumsan ut ac ipsum. Quisque non pretium
-                  tellus, nec tempus dui. Aenean elementum, est ut scelerisque
-                  pellentesque, dui justo posuere leo, quis porttitor turpis dui
-                  quis neque. Aenean feugiat felis eu lorem pharetra euismod.
-                  Fusce at massa non felis dapibus suscipit eu eu leo. Donec ac
-                  ultricies ligula, eget tempor nisl. Nunc leo libero, placerat
-                  et nulla sit amet, ultricies dapibus eros. In feugiat, nisi in
-                  aliquet elementum, urna nulla imperdiet ex, at vulputate sem
-                  odio quis libero. Proin ut massa id augue rhoncus auctor.
+                  Although requirements around user permissions can vary by
+                  fleet, we believed mostly upper management (VP of the Safety
+                  team) would be using this feature based on previous findings
+                  from other features, persona behaviors, and persona
+                  responsibiliies. At the same time we were exploring the idea
+                  of putting a condensed view of the Watch List on a Executive
+                  Dashboard (See KPI Dashboard for more details on this
+                  project). Because of this we conducted phone interviews with
+                  them.
+                </p>
+                <p>
+                  4 different interviews were conducted with upper management of
+                  varying types of trucking fleets. Findings confirmed that a
+                  condensed version of the Watch List should be on the user's
+                  dashboard due to their limited time. Also, finding pointed to
+                  some of the key factors managers look for when assessing a
+                  driver's behavior. Some include collisions and telematic
+                  events.
                 </p>
               </div>
               <div>
                 <h2 class="projectSection">Iteration 1</h2>
+                <h3>Designing Reasoning</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  convallis libero dignissim, pretium lectus non, mattis lorem.
-                  Praesent laoreet mi ut ante varius tristique. Nullam et orci
-                  lorem. Vestibulum posuere dui non dolor tristique viverra.
-                  Quisque elementum libero a mauris maximus consequat ut eu
-                  dolor. Vestibulum id risus at eros ornare vehicula et at
-                  felis. Pellentesque leo lorem, fermentum in fermentum eu,
-                  vulputate tempor leo. Proin scelerisque enim eu felis
-                  ultricies malesuada sit amet fringilla odio. Nunc eget arcu
-                  sit amet eros convallis rutrum a nec nibh. Aliquam et massa ac
-                  lectus fringilla accumsan ut ac ipsum. Quisque non pretium
-                  tellus, nec tempus dui. Aenean elementum, est ut scelerisque
-                  pellentesque, dui justo posuere leo, quis porttitor turpis dui
-                  quis neque. Aenean feugiat felis eu lorem pharetra euismod.
-                  Fusce at massa non felis dapibus suscipit eu eu leo. Donec ac
-                  ultricies ligula, eget tempor nisl. Nunc leo libero, placerat
-                  et nulla sit amet, ultricies dapibus eros.
+                  Because some fleets have so many drivers, they'll need to go
+                  through them very efficiently. Thus the first iteration
+                  enabled the user to complete the entire workflow (viewing
+                  riskest drivers, analyzing behavior, and taking action) from
+                  the dashboard. This was done by clicking on a driver, which
+                  opens a modal like side panel from Microsoft's Office Fabric
+                  UI library. Or if desired, they could go a separate deticated
+                  screen to view the Watch List full window width.
+                </p>
+                <p>
+                  So first, the user would look at the list of drivers and
+                  select a driver based on the safety score given by the machine
+                  learning model. Next, they would view the driver's history and
+                  determine what their root issues. Last, the user would go
+                  through a step by step wizard to sign a performance
+                  improvement plan.
+                </p>
+                <h3>Findings From Testing</h3>
+                <p>
+                  5 users were tested from varying companies. Findings showed
+                  that the ability to assign prescriptive plans in a highly
+                  formated manner via a step by step wizard UI were highly
+                  desired. However, the modal panel pattern was constraining in
+                  terms of space and would overlap the Watch List itself when
+                  triggered. Additionally, it was found being explicit in
+                  labeling just very neccassary as many users questioned certain
+                  parts of graphs and other smaller UI elements. Lastly, it was
+                  noted that users might want to be to esculate the employee's
+                  disciplinary status and assign a letter, which is common in
+                  trucking fleets. Letters inform the driver of what they did
+                  wrong and require written confirmation from the driver that
+                  they've recieved it.
+                </p>
+                <p>
+                  Overall, findings indicated we were on the correct path.
+                  Several participants enthusiastically replied "Yes!" when
+                  asked if they would be like to stay in the loop on the
+                  features progress and providing additional insight.
                 </p>
               </div>
               <div>
                 <h2 class="projectSection">Iteration 2</h2>
+                <h3>Design Reasoning</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  convallis libero dignissim, pretium lectus non, mattis lorem.
-                  Praesent laoreet mi ut ante varius tristique. Nullam et orci
-                  lorem. Vestibulum posuere dui non dolor tristique viverra.
-                  Quisque elementum libero a mauris maximus consequat ut eu
-                  dolor. Vestibulum id risus at eros ornare vehicula et at
-                  felis. Pellentesque leo lorem, fermentum in fermentum eu,
-                  vulputate tempor leo. Proin scelerisque enim eu felis
-                  ultricies malesuada sit amet fringilla odio. Nunc eget arcu
-                  sit amet eros convallis rutrum a nec nibh. Aliquam et massa ac
-                  lectus fringilla accumsan ut ac ipsum. Quisque non pretium
-                  tellus, nec tempus dui. Aenean elementum, est ut scelerisque
-                  pellentesque, dui justo posuere leo, quis porttitor turpis dui
-                  quis neque. Aenean feugiat felis eu lorem pharetra euismod.
-                  Fusce at massa non felis dapibus suscipit eu eu leo. Donec ac
-                  ultricies ligula, eget tempor nisl. Nunc leo libero, placerat
-                  et nulla sit amet, ultricies dapibus eros.
+                  Due to the constrains of the modal panel, it was decided to
+                  still have the Watch List on the Dashboard (user task 1);
+                  however, analyzing (user task 2) and prescribing a plan (user
+                  task 3) were moved.
                 </p>
-              </div>
-              <div>
-                <h2 class="projectSection">Iteration 3</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  convallis libero dignissim, pretium lectus non, mattis lorem.
-                  Praesent laoreet mi ut ante varius tristique. Nullam et orci
-                  lorem. Vestibulum posuere dui non dolor tristique viverra.
-                  Quisque elementum libero a mauris maximus consequat ut eu
-                  dolor. Vestibulum id risus at eros ornare vehicula et at
-                  felis. Pellentesque leo lorem, fermentum in fermentum eu,
-                  vulputate tempor leo. Proin scelerisque enim eu felis
-                  ultricies malesuada sit amet fringilla odio. Nunc eget arcu
-                  sit amet eros convallis rutrum a nec nibh. Aliquam et massa ac
-                  lectus fringilla accumsan ut ac ipsum. Quisque non pretium
-                  tellus, nec tempus dui. Aenean elementum, est ut scelerisque
-                  pellentesque, dui justo posuere leo, quis porttitor turpis dui
-                  quis neque. Aenean feugiat felis eu lorem pharetra euismod.
-                  Fusce at massa non felis dapibus suscipit eu eu leo. Donec ac
-                  ultricies ligula, eget tempor nisl. Nunc leo libero, placerat
-                  et nulla sit amet, ultricies dapibus eros.
+                  Inspired by some other B2B UIs, a new idea came about to click
+                  on a driver and the table shrinks to a list. This gave enough
+                  room to display the driver's information and transition to a
+                  wizard UI on the right side, yet still enabling the user to
+                  see where the driver was in relation to others on the Watch
+                  List. Now, if users clicked on the header they would see a
+                  full width data table of the Watch List on a new screen and
+                  then clicking a driver would trigger the table become a list
+                  and show the driver info. If users clicks on a driver, then it
+                  directs them to the new page, but would already trigger the
+                  animation to show the Watch List as a condensed list and open
+                  the driver's profile. Plus, an additional step was added to
+                  the wizard, to allow the user to esculate the driver's
+                  disciplinary status. Lastly, additional labeling was added.
+                </p>
+                <h3>Findings From Testing</h3>
+                <p>
+                  Some users were involved in testing and there were no
+                  questions evolving around labeling. There was a concern that
+                  the new idea on animation and splitting the screen would cause
+                  some cognitive overload, leading to confusion; however, users
+                  followed along just fine. Additionally, there was a concern
+                  users would have difficulties with how telematic alerts
+                  (speeding, harsh braking, harsh cornering) are displayed since
+                  they can occur VERY frequently. However, the new condensed
+                  viewing of telematics enabled the user to dive deeper if
+                  needed.
                 </p>
               </div>
               <div>
                 <h2 class="projectSection">UI Design</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!----------------------------- No. 2 ----------------------------->
+      <div class="modal">
+        <div id="modal-wrapper">
+          <div id="modal-header">
+            <div id="header-info">
+              <h3 id="modal-title">Training</h3>
+              <div id="header-details">
+                <p>UX/UI Design | Idelic</p>
+              </div>
+            </div>
+            <button id="close-button">
+              <div id="line"></div>
+              <div id="line2"></div>
+            </button>
+          </div>
+          <div id="modal-body">
+            <ul id="scroll-links"></ul>
+            <div id="material">
+              <div>
+                <h2 class="projectSection">Problem</h2>
+                <h3>Industry Background</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  convallis libero dignissim, pretium lectus non, mattis lorem.
-                  Praesent laoreet mi ut ante varius tristique. Nullam et orci
-                  lorem. Vestibulum posuere dui non dolor tristique viverra.
-                  Quisque elementum libero a mauris maximus consequat ut eu
-                  dolor. Vestibulum id risus at eros ornare vehicula et at
-                  felis. Pellentesque leo lorem, fermentum in fermentum eu,
-                  vulputate tempor leo. Proin scelerisque enim eu felis
-                  ultricies malesuada sit amet fringilla odio. Nunc eget arcu
-                  sit amet eros convallis rutrum a nec nibh. Aliquam et massa ac
-                  lectus fringilla accumsan ut ac ipsum. Quisque non pretium
-                  tellus, nec tempus dui. Aenean elementum, est ut scelerisque
-                  pellentesque, dui justo posuere leo, quis porttitor turpis dui
-                  quis neque. Aenean feugiat felis eu lorem pharetra euismod.
-                  Fusce at massa non felis dapibus suscipit eu eu leo. Donec ac
-                  ultricies ligula, eget tempor nisl. Nunc leo libero, placerat
-                  et nulla sit amet, ultricies dapibus eros.
+                  First, CDL drivers have a lot of federal regulations they have
+                  to abide by, which requires certain certifications and
+                  training. This also requires the company’s safety team to keep
+                  track if those drivers are up-to-date. If they don’t and the
+                  driver gets into pulled over, this can result in higher fines;
+                  the vehicle becoming out of service (OoS) which prevents
+                  completion of a delivery; or even a negative impact on the
+                  company’s CSA score. Although the Federal Motor Carrier Safety
+                  Administration (FMCSA) is looking to move from the CSA score
+                  to an IRT model, this can potentially still hurt a company’s
+                  score.
                 </p>
+                <h3>User Problems</h3>
+                <p>
+                  Previous iterations of the training module only let a user
+                  certify/pass a driver one by one, which would take an hour or
+                  more for a trainer or manager to go through training classes
+                  that had 50 or more drivers. On top of this, fleets have
+                  different ways of approaching assigning and certifying a
+                  driver passed depending on their size and financial resources.
+                </p>
+                <h3>Design Limitations and Challenges</h3>
+                <p>Some limitations and challenges included:</p>
+                <ol id="briefList">
+                  <li>
+                    First project implementing a new design system (Microsoft’s
+                    Fabric UI with Typescript).
+                  </li>
+                  <li>An urgency to begin development from customers.</li>
+                  <li>Limited time and team members.</li>
+                  <li>Other projects in progress as well.</li>
+                </ol>
+              </div>
+              <div>
+                <h2 class="projectSection">Task</h2>
+                <p>
+                  The task was to create a simple way to assign and track
+                  training classes and attendees for different company’s needs
+                  like:
+                </p>
+                <ol id="briefList">
+                  <li>
+                    Integrating with other training management software that
+                    fead data to and from.
+                  </li>
+                  <li>Dealing with in-person vs online video trainings.</li>
+                </ol>
+              </div>
+              <div>
+                <h2 class="projectSection">Research</h2>
+                <h3>Observations and Interviews</h3>
+                <p>
+                  Due to limited time, 2 observations and 3 interviews were
+                  conducted with only two different companies; however, their
+                  needs differed. One didn’t not have another system to for the
+                  safety team for drivers to do video training. They did all
+                  training in-person. The second company did very little
+                  in-person training and primarily relied on drivers signing
+                  into an integrated system to do online video trainings, but
+                  they wanted our system to allow the managers to assign and
+                  track driver’s trainings that are nearing expiration.
+                </p>
+                <p>
+                  Observations involved watching users walk through each step of
+                  what they would do on other training management systems and
+                  encouraging users mention the software’s pros and cons.
+                  Interviews involved tell us about other software’s pros and
+                  cons and understanding their differing business processes.
+                </p>
+              </div>
+              <div>
+                <h2 class="projectSection">Iteration 1</h2>
+                <h3>Designing Reasoning</h3>
+                <p>
+                  Based on conversations with customers, this would need to
+                  allow for interesting edge cases and plenty of forgiveness for
+                  editing, yet be able to guide users through each requirement.
+                  Because users would do the same or very similar trainings in
+                  the admin panel, a place to configure settings of the
+                  software. It contains things like the training name, training
+                  description, driving positions that require different
+                  trainings, and expiration for the training. All of which
+                  users, would rarely edit.
+                </p>
+                <p>
+                  Next is the creation of classes based on a training course
+                  template. Classes are an instance of a training course that
+                  contains a participant roster, date, and time. Due to it’s
+                  multi-step process, a wizard UI pattern was thought to be the
+                  best approach. Because the previous training module just spit
+                  out a list of drivers with the training type, it seemed to
+                  cause cognitive overload for users. To solve this, we added a
+                  step at the beginning. Users would first select the training
+                  type that showed the amount of drivers past due, due within 30
+                  days, and due within 90 days for that training type. This
+                  acted as a filter and allowed the user to easily focus on one
+                  training type. Step 2 users would select who would attend that
+                  class and be able to filter by properties like terminal, date,
+                  and position. Step 3 users set the trainer, date, time, and
+                  location for the training. Last, users reviewed all of the
+                  information and confirmed the creation of the class.
+                </p>
+                <p>
+                  Lastly, users had to be able to mark whether or not
+                  participants attended and passed the class. This was in a
+                  separate section of the training module where they could a
+                  running history of classes with filters to find classes. The
+                  list needed visual indicators to show which classes are
+                  pending review and already reviewed classes. Once users
+                  clicked on a class, they had to exempt a driver from the
+                  roster, fail one, and pass the rest.
+                </p>
+                <h3>Findings From Testing</h3>
+                <p>
+                  5 participants from 3 different companies tested a paper
+                  prototype and feedback was very positive. In addition, stock
+                  holders from upper management were consulted with the
+                  findings. All 5 participants went through the class creation
+                  process with ease. 2 participants questioned how to switch
+                  from class creation and the running history of classes.
+                  However, after a short period were able to see how to which
+                  views. When participants were asked to find the Forklift class
+                  they created, they did it with ease. When the panel slid out
+                  from the right side, 3 participants would there was a lack of
+                  visual indicator to understand the top part of the modal panel
+                  contained the class details and the second half had the class
+                  roster. Once they distinguished this, 5 participants
+                  understood how to mark off the attendees, some minor edits
+                  were required to help understand what to do.
+                </p>
+              </div>
+              <div>
+                <h2 class="projectSection">Iteration 2</h2>
+                <h3>Design Reasoning</h3>
+                <p>
+                  Because of time restrictions and the positive feedback for
+                  participants, development began. The wizard UI pattern for
+                  class creation did not require major edits. However, it was
+                  required to helping users understand what to do with the
+                  roster of drivers, and indicating that the fields were for the
+                  class details. It was decided that we would keep the modal
+                  panel to show the roster and class details, and to not expand
+                  the already large scope of development effort. To distinguish
+                  the two parts, we put the two parts into tabs: the first was
+                  for the roster and the second for the class details. Plus,
+                  participants and stack holders mentioned the need to document
+                  any details of the class. For example, trainers might need to
+                  state that certain drivers were more engaged than others. This
+                  was added to the second tab.
+                </p>
+              </div>
+              <div>
+                <h2 class="projectSection">UI Design</h2>
               </div>
             </div>
           </div>
@@ -219,13 +415,6 @@
       </div>
       <div id="behind-modal"></div>
     </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"
-    ></script>
-    <script src="/node_modules/animejs/lib/anime.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
